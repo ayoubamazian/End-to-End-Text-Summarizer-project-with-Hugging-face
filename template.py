@@ -1,19 +1,6 @@
 import logging
 import os
-from datetime import datetime
 from pathlib import Path
-
-LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
-logs_path = os.path.join(os.getcwd(), "logs", LOG_FILE)
-os.makedirs(logs_path, exist_ok=True)
-
-LOG_FILE_PATH = os.path.join(logs_path, LOG_FILE)
-
-logging.basicConfig(
-    filename=LOG_FILE_PATH,
-    format=" [%(asctime)s] %(lineno)d %(name)s - %(levelname)s - %(message)s",
-    level=logging.INFO,
-)
 
 project_name = "textSummarizer"
 
@@ -23,6 +10,7 @@ list_of_files = [
     f"src/{project_name}/components/__init__.py",
     f"src/{project_name}/utils/__init__.py",
     f"src/{project_name}/utils/common.py",
+    f"src/{project_name}/logging/__init__.py",
     f"src/{project_name}/config/__init__.py",
     f"src/{project_name}/config/configuration.py",
     f"src/{project_name}/pipeline/__init__.py",
